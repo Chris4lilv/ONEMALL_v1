@@ -30,7 +30,7 @@
       status, sort_order, create_time, 
       update_time)
     values (#{id,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-      #{status,jdbcType=BIT}, #{sortOrder,jdbcType=INTEGER},now(),
+      #{status,jdbcType=BIT}, #{sortOrder,jdbcType=INTEGER}, now(),
       now())
   </insert>
   <insert id="insertSelective" parameterType="com.ONEMALL.pojo.Category" >
@@ -75,7 +75,7 @@
         #{sortOrder,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
-       now(),
+        now(),
       </if>
       <if test="updateTime != null" >
         now(),

@@ -31,7 +31,7 @@
       update_time)
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, 
       #{quantity,jdbcType=INTEGER}, #{checked,jdbcType=INTEGER}, now(),
-     now())
+      now())
   </insert>
   <insert id="insertSelective" parameterType="com.ONEMALL.pojo.Cart" >
     insert into mmall_cart

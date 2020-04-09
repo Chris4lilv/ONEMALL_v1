@@ -38,7 +38,7 @@
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderNo,jdbcType=BIGINT}, 
       #{productId,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{productImage,jdbcType=VARCHAR}, 
       #{currentUnitPrice,jdbcType=DECIMAL}, #{quantity,jdbcType=INTEGER}, #{totalPrice,jdbcType=DECIMAL}, 
-     now(),now())
+      now(), now())})
   </insert>
   <insert id="insertSelective" parameterType="com.ONEMALL.pojo.OrderItem" >
     insert into mmall_order_item
@@ -144,7 +144,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null" >
-        update_time = now(),
+        update_time =now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
