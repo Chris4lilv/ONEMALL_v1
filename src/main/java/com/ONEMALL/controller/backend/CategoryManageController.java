@@ -33,7 +33,7 @@ public class CategoryManageController {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "Please login first");
         }
 
-        if(iUserService.checkAdminRole(user).isSussess()){
+        if(!iUserService.checkAdminRole(user).isSussess()){
             return iCategoryService.addCategory(categoryName, parentId);
         }else{
             return ServerResponse.createByErrorMessage("Denied. Admin authority needed");
@@ -77,7 +77,7 @@ public class CategoryManageController {
         if(user == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "Please login first");
         }
-        if(iUserService.checkAdminRole(user).isSussess()){
+        if(!iUserService.checkAdminRole(user).isSussess()){
             //Look up current node id and recursive child id
             return iCategoryService.selectCategoryAndChildrenById(categoryId);
         }else{

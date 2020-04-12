@@ -18,7 +18,7 @@ import org.springframework.util.CollectionUtils;
 import java.util.List;
 import java.util.Set;
 
-@Service("ICategoryService")
+@Service("iCategoryService")
 public class CategoryServiceImpl implements ICategoryService {
 
     @Autowired
@@ -71,7 +71,7 @@ public class CategoryServiceImpl implements ICategoryService {
      * @param categoryId
      * @return
      */
-    public ServerResponse selectCategoryAndChildrenById(Integer categoryId){
+    public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId){
         Set<Category> categorySet = Sets.newHashSet();
         findChildCategory(categorySet, categoryId);
 
